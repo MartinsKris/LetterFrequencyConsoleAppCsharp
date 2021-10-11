@@ -1,4 +1,4 @@
-﻿namespace LetterFrequency
+﻿namespace LetterFrequency.Models
 {
     public class CharObject
     {
