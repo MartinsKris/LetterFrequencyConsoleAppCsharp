@@ -1,9 +1,9 @@
-using LetterFrequency;
+using LetterFrequency.Methods;
+using LetterFrequency.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using LetterFrequency.Models;
 
 namespace LetterFrequencyTest
 {
@@ -23,9 +23,10 @@ namespace LetterFrequencyTest
                 { 'P', 0 }, { 'Q', 0 }, { 'R', 0 }, { 'S', 0 }, { 'T', 0 },
                 { 'U', 0 }, { 'V', 0 }, { 'W', 0 }, { 'X', 0 }, { 'Z', 25 }
             };
+            FrequencyDictionary dictionaryOfFrequencies = new FrequencyDictionary();
 
             //Act
-            var dictionaryValue = Program.FrequencyDictionary(testListOfChars);
+            var dictionaryValue = dictionaryOfFrequencies.FrequencyDictionaryGen(testListOfChars);
 
             //Assert
             Assert.IsTrue(dictionaryValue.All(value => testDictionary.Contains(value)));
@@ -37,7 +38,7 @@ namespace LetterFrequencyTest
             //Arrange
             var testChar = 'Q';
             var testInt = 32;
-            
+
             //Act
             var objectValue = new CharObject(testChar, testInt);
 
